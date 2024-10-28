@@ -45,7 +45,29 @@ Activer l'environnement virtuel :
 Ai-FastApi/
 ├── app/
 │   ├── __init__.py            # Fichier pour initialiser le module
-│   └── main.py                # Point d'entrée de l'application FastAPI
+│   ├── main.py                # Point d'entrée de l'application FastAPI
+│   ├── api/                   # Dossier pour les routes de l'API
+│   │   ├── __init__.py
+│   │   ├── v1/                # Versionnement des routes (ex: v1)
+│   │   │   ├── __init__.py
+│   │   │   ├── user_routes.py # Routes liées aux utilisateurs
+│   │   │   └── question_routes.py # Routes liées au chatbot
+│   ├── core/                  # Configuration principale et fonctions de base
+│   │   ├── __init__.py
+│   │   ├── config.py          # Fichier de configuration de l'application
+│   │   └── security.py        # Gestion de la sécurité (authentification, tokens, etc.)
+│   ├── models/                # Modèles de données pour MongoDB
+│   │   ├── __init__.py
+│   │   ├── user_model.py      # Modèle utilisateur
+│   │   └── question_model.py  # Modèle pour les données du chatbot
+│   ├── schemas/               # Schémas Pydantic pour la validation
+│   │   ├── __init__.py
+│   │   ├── user_schema.py     # Schéma pour les utilisateurs
+│   │   └── question_schema.py  # Schéma pour les données chatbot
+│   └── services/              # Logique métier, ex : gestion des utilisateurs
+│       ├── __init__.py
+│       ├── user_service.py    # Service pour les utilisateurs
+│       └── question_service.py # Service pour le chatbot
 ├── env/                       # Environnement virtuel (ne doit pas être poussé sur Git)
 ├── requirements.txt           # Liste des dépendances
 ├── README.md                  # Documentation du projet
@@ -54,7 +76,7 @@ Ai-FastApi/
 ### 4. **lancer-lapplication** :
 
   ```bash
-  uvicorn app.main:app --reload
+  uvicorn app1.main:app1 --reload
   ```
 
 ### 5. **gestion-des-dépendances** :
