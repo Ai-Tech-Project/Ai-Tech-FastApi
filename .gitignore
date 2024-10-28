@@ -1,5 +1,4 @@
-# Environnements virtuels
-env/
+
 # Fichiers de configuration de l'éditeur
 .vscode/
 .idea/
@@ -14,3 +13,6 @@ __pycache__/
 
 # Autres fichiers inutiles
 .DS_Store
+
+
+env/
