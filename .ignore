@@ -1,7 +1,5 @@
 # Environnements virtuels
 env/
-
-
 # Fichiers de configuration de l'éditeur
 .vscode/
 .idea/
