@@ -1,8 +1,11 @@
 from fastapi import FastAPI
+from app.api import user_routes
+from app.api import question_routes
 
+app = FastAPI(title="AI FastAPI")
 
-app = FastAPI()
+# Inclure les routes d'utilisateur
+app.include_router(user_routes.router)
 
-@app.get('/')
-async def root():
-    return {'Hello': 'World'}
+# Inclure les routes de questions
+app.include_router(question_routes.router)
